@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="JoeDirt">
+<head>
+  <title>NG REPEAT</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="main.js"></script>
+  
+</head>
+<body ng-keyup="brandy.eventTastic($event)" ng-click="brandy.eventTastic($event)" >
+
+  
+  <div ng-controller="Brandy as brandy">
+<!--   <h1>{{brandy.greeting}}</h1> -->
+  <h3 ng-bind="brandy.greeting"></h3>
+  
+  
+<!--  Duplicate Values  -->
+<!--   <ul>
+    Cast : 
+    <li ng-repeat="castMember in brandy.characters track by $index">
+      {{castMember}} {{$index}} {{$even}} Mid : {{$middle}}
+    </li>
+  </ul> -->
+  
+<!--  Object Iteration  -->
+<!--     <ul>
+    Cast : 
+    <li ng-repeat="(position, castMember) in brandy.charactersObject">
+      {{position}} : {{castMember}}
+    </li>
+  </ul> -->
+  
+  
+  
+  <ul>
+  
+    <!--   scene => brandy.scenes[i]     -->
+    <li ng-repeat="(sceneIndex, scene) in brandy.scenes">
+    
+       <h4>{{scene.name}} - {{$index}}</h4>
+       <h6>Location : {{scene.set}}</h6>
+        <ul>
+          Actors : 
+          <li ng-click="brandy.removeActor(sceneIndex, $index)" ng-repeat="actor in scene.actors">
+            {{actor}} - {{$index}} - {{sceneIndex}}
+          <!--  actor =>  brandy.scenes[i].actors[j]          -->
+          </li>
+        </ul>
+    
+    </li>
+    
+  </ul>
+  
+  
+  </div>
+  
+  <div ng-controller="KickinWing as wing">
+    {{wing.greeting}}
+  </div>
+  
+  
+  
+</body>
+</html>

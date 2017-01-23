@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="Crawler" lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  
+  <script src="/js/module.crawler.js"></script>
+  <script src="/js/controller.dungeon-master.js"></script>
+  <script src="/js/factory.torture-chamber.js"></script>
+
+  
+  
+  <title>Angular Time</title>
+</head>
+<body ng-controller="dungeonMaster as dm">
+  <h1>{{dm.greeting}}</h1>
+
+  <div class="container-fluid">
+    <div ng-if="!dm.gameStarted" id="Player-Setup" class="row">
+      <div class="col-xs-12">
+        <input class="form-control" type="text" placeholder="Name" ng-model="dm.newPlayer.name">
+      </div>
+      <div class="col-xs-6">
+        <select class="form-control" ng-model="dm.newPlayer.race">
+          <option value="" selected disabled>Pick a race</option>
+          <option value="elf">Elf</option>
+          <option value="orc">Orc</option>
+          <option value="troll">Troll</option>
+        </select>
+      </div>
+      <div class="col-xs-6">
+        <select class="form-control" ng-model="dm.newPlayer.class">
+          <option value="" selected disabled>Pick a class</option>
+          <option value="rogue">Rogue</option>
+          <option value="wizard">Wizard</option>
+          <option value="barbarian">Barbarian</option>
+        </select>
+      </div>
+       <div class="col-xs-12">
+        <button ng-click="dm.createHero()" class="pull-right btn btn-success">Make a Hero!</button>
+      </div>
+    </div>
+    
+    <div ng-if="dm.gameStarted" id="Player-Info" class="row">
+      <div class="col-xs-12">
+        <h3 class="pull-right">
+          {{dm.PC.name}} - HP:{{dm.PC.health}}
+        </h3>
+      </div>
+    </div>
+    
+    <div ng-if="dm.gameStarted" id="Room-Info" class="row">
+      <div class="col-xs-12">
+        Your are in a {{dm.currentRoom.size}} room!
+        <p>
+          {{dm.currentRoom.setting}}
+        </p>
+      </div>
+      
+      <div class="col-xs-12">
+        You are fighting a {{dm.currentRoom.monster.species}} named {{dm.currentRoom.monster.name}}
+        <p>
+          {{dm.currentRoom.monster.motivation}}
+        </p>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  <button ng-click="dm.makeRoom()" class="btn btn-info">Make Room!</button>
+  
+  
+</body>
+
+</html>

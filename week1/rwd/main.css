@@ -1,0 +1,22 @@
+.whiskey{
+  height:200px;
+  background-color:red;
+}
+
+@media(min-width:786px){
+  .whiskey{
+    background-color: greenyellow;
+  }
+}
+
+@media(min-width:1024px){
+  .whiskey{
+    background-color: darkorchid;
+  }
+}
+
+@media(min-width:1200px){
+  .whiskey{
+    background-color: firebrick;
+  }
+}

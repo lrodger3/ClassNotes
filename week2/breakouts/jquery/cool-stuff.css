@@ -1,0 +1,13 @@
+
+li:hover {
+    color: #ddd;
+}
+
+li {
+    transition: transform linear 200ms;
+    transform: perspective(0) translateZ(0);
+}
+
+li.move {
+    transform: perspective(1000px) translateZ(-200px);
+}

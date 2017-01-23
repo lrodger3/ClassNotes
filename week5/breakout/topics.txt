@@ -1,0 +1,19 @@
+More Angular
+  ngRepeat
+
+OOP
+
+Debugger in Chrome
+
+Underscore.js
+
+Speaking in Code
+
+
+
+
+
+
+
+
+

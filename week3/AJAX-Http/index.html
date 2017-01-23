@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="Pokeymans" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX and HTTP</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="main.js"></script>
+</head>
+<body ng-controller="Trainer as trainer">
+  {{trainer.greeting}}
+  <br>
+  
+  <input ng-model="trainer.pokemonInput" type="text">
+  <button ng-click="trainer.getPokemon(trainer.pokemonInput)">Get Em!</button>
+  <br>
+  Our favorite pokemon : {{trainer.pokemon.name}}
+  <br>
+  <ul>
+    <li ng-repeat="pokeyman in trainer.pokeymans | orderBy:'pokemon_species.name'" ng-click="trainer.getPokemon(pokeyman.entry_number)">
+      
+      {{pokeyman.pokemon_species.name}}
+      
+    </li>
+  </ul>
+  
+</body>
+</html>

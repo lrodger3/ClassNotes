@@ -1,0 +1,59 @@
+.kindegarten{
+  background-color:darkolivegreen;
+  width: 200px;
+  margin:auto;
+}
+
+.marketing-panel-container{
+  text-align:center;
+  font-size:0px;
+}
+.marketing-panel {
+  display:inline-block;
+  width:33.333%;
+  font-size:14px;
+}
+
+.outer {
+  height:400px;
+  background-color:burlywood;
+}
+
+.inner{
+  
+  line-height:400px;
+  vertical-align:middle;
+  
+}
+
+
+.optimus-prime{
+  background-color:dodgerblue;
+  height:300px;
+  
+  position:relative;
+}
+.other-guy{
+  background-color:red;
+  height:50px;
+  width:50px;
+  
+  position:absolute;
+  left : 50%;
+  top : 50%; /* % refers to .optimus-prime (parent) */
+  transform : translate(-50%, -50%) /* % refers to .other-guy */
+  
+  
+  
+}
+
+
+/* Super dirty / cheap vertical centering */
+p{
+  background-color:blue;
+  color : white;
+  padding: 30px 0px; /* same padding on top/bottom */
+}
+
+
+

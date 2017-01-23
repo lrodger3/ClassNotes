@@ -1,0 +1,15 @@
+body{
+/*   height:100000px; */
+}
+
+.article-img {
+  float : left;
+}
+
+.article-img.right{
+  float : right;
+}
+
+.article-text{
+/*   overflow : hidden; */
+}

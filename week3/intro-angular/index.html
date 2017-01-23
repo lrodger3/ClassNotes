@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="SamuelLJackson" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Time</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  
+  <!--  my code relies on angular so it MUST go after  -->
+  <script src="main.js"></script>
+  
+</head>
+<body ng-controller="harveyKeitel">
+
+  <h1>
+    Hello, {{greeting.toUpperCase()}}!!!
+  </h1>
+  {{clean()}}
+  
+<!--   this ngModel is tied to $scope.leopardPants  -->
+  <input ng-model="leopardPants">
+  
+  {{leopardPants}}
+</body>
+</html>

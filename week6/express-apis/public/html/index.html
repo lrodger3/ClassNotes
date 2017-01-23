@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="Kanye" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Express APIs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="/js/module.kanye.js"></script>
+  <script src="/js/controller.home.js"></script>
+  <script src="/js/factory.api.js"></script>
+
+</head>
+<body ng-controller="Home as home">
+  <h1>{{home.welcome}}</h1>
+  
+<!--   <button ng-click="home.testRequest()" class="btn btn-success">Test it!</button> -->
+  
+  <form ng-submit="home.getThatAlbum()" class="form-inline">
+    
+    <div class="form-group">
+      <input placeholder="Album Name" ng-model="home.albumInput" type="text" class="form-control">
+      <button type="submit" class="btn btn-info">Get it!</button>
+    </div>
+    
+  </form>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12" ng-repeat="track in home.album">
+        {{$index}} - {{track.title | uppercase}}
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

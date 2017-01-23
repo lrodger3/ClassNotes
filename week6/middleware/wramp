@@ -1,0 +1,12 @@
+## WARMUP(middleware) - you will have an in-class challenge in lecture this afternoon!
+
+Create a simple express application scaffold
+
+Make sure to create your package.json, .gitignore, and your server.js
+
+install express through npm
+
+write a GET route handler for / that sends down the following text : 
+'Grumpy Wizards make toxic brew for the Evil Queen and Jack'
+
+Also, run your server and access it through the browser or PostMan to make sure it works!

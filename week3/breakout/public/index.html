@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="TMNT" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Breakin Out</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-animate.js"></script>
+  <script src="/main.js"></script>
+  
+</head>
+<body ng-controller="Sewer as manhole">
+  
+  <div class="jumbotron text-center">
+  <h2>{{manhole.title}}</h2>
+  </div>
+  
+  <div class="container">
+  
+    <div class="row">
+      
+      <!--  Turtle Template    -->
+      <div 
+           ng-repeat="dude in manhole.turtles | filter:manhole.adventureFilter" 
+           class="turt-shell col-xs-12 col-sm-6 text-center thumbnail"       
+           style="background-color:{{dude.color | lowercase}}; color:white">
+      
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="turtle-name" ng-click="manhole.confirmAdventure(dude)">{{dude.name}}</h4>
+          </div>
+          <div class="col-xs-6">
+            <h6>{{dude.weapon}}</h6>
+          </div>
+          <div class="col-xs-6">
+            <h6>{{dude.color}}</h6>
+          </div>
+        </div>
+          
+      </div>
+      <!--      -->
+      
+      
+      
+    </div>
+    <div ng-show="!manhole.howManyTurtlesLeft()" class="alert alert-danger" role="alert">
+  No turtles left to defend the sewers!
+      <button ng-click="manhole.callHome()" class="btn btn-link">Call Dem Turtles Home!</button>
+    </div>
+  </div>
+  
+  
+
+<!--  Turtle Modal!  -->
+<div id="turtleAdventureModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body tall-modal">
+          {{manhole.activeTurtle.name}} wants to go on an adventure!
+      </div>
+      <div class="modal-footer">
+        <button ng-click="manhole.sendTurtle()" class="btn-spacing pull-right btn btn-success">YES</button>
+        <button data-dismiss="modal" class="btn-spacing pull-right btn btn-danger">NO</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--    -->
+  
+</body>
+</html>
+
+

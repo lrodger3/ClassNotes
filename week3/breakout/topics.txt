@@ -1,0 +1,14 @@
+Express app with angular
+
+OneWay/TwoWay Binding
+Controller => HTML : how does that object get over there
+More Bootstrap - JS components
+ngAnimate
+ngInit
+ngRepeat
+
+Random Number
+Math.floor(Math.random() * arr.length)
+Math.floor(Math.random() * UPPERBOUND)
+
+

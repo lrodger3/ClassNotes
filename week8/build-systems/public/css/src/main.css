@@ -1,0 +1,17 @@
+#main{
+  background-color : magenta;
+}
+
+h1 {
+  font-size : 100px;
+  color : red;
+}
+
+.somethingElse {
+  transition : all 0.2s ease;
+  left : 0%;
+}
+
+.somethingElse.active {
+  left : 100%;
+}

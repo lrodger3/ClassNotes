@@ -1,0 +1,11 @@
+.lightside {
+  background-color : papayawhip;
+  color : black;
+  border: thick solid chartreuse;
+}
+
+.darkside {
+  background-color : firebrick;
+  color : white;
+  border: thick solid black;
+}

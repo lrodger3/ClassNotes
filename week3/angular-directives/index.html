@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="StarWars" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Directives</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="main.js"></script>
+  
+</head>
+<body ng-controller="yoda as yCtrl">
+<!--   <div ng-controller="mace as mCtrl">
+    {{greeting}} - which controller are we referencing the 'greeting' property?
+    {{yCtrl.greeting}}
+    {{mCtrl.greeting}}
+  </div> -->
+  
+  <div class="jumbotron text-center">
+    <h1>{{yCtrl.greeting}}</h1>
+  </div>
+  
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="inline-form">
+        
+          <input 
+                 ng-model="yCtrl.newToy.name"
+                 class="form-control" 
+                 type="text" 
+                 placeholder="Name">
+          <input 
+                  ng-model="yCtrl.newToy.img"
+                 class="form-control" 
+                 type="text" 
+                 placeholder="Image">
+          <input 
+                 ng-model="yCtrl.newToy.price"
+                 class="form-control" 
+                 type="text" 
+                 placeholder="Price">
+  
+          <button ng-click="yCtrl.addToy()" class="btn btn-info">Add Collectible</button>
+        
+        </form>
+      </div>
+    </div>
+    
+    
+    
+    <div class="row">
+      <!--   ng-repeat="ITEM in LIST"     -->
+      <!--   ng-repeat="LIST[i] in LIST" toy => yCtrl.collectibles[i]    -->
+
+      <div ng-repeat="toy in yCtrl.collectibles" class="collectible-item thumbnail col-xs-12 col-sm-6"
+           ng-class="{
+                     'lightside' : !toy.darkSide,
+                     'darkside'  : toy.darkSide
+                     }"
+           >
+          <h3>{{toy.name}}</h3>
+          <p class="pull-right">${{toy.price}}</p>
+          <button ng-click="yCtrl.switchSide(toy)" class="pull-left btn btn-primary">Switch Sides</button>
+          <img width="100px" src="{{toy.img}}">
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  
+</body>
+</html>

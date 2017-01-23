@@ -1,0 +1,48 @@
+/* Select Elements by tag name */
+
+p {
+  color: peachpuff;
+  font-size: 18px;
+}
+
+
+/* Select Elements by ID */
+
+#logo {
+  height: 50px;
+  width: 50px;
+}
+
+
+/* Select Elements by Class  */
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.header {
+  font-size: 48px;
+}
+
+
+/* Location-based selectors */
+
+
+/* Descendent selector - any number of levels deep */
+
+#feet li {
+  /*  Select all "li"s inside of "#feet"  */
+  background-color: green;
+  color: red;
+}
+
+
+/* Child selector - only selects one level deep */
+
+ul> li {}
+
+
+/* Please don't do this - Brandon will beat you with a wiffle bat */
+
+#header> ul> li:nth-child(4) a:active {}

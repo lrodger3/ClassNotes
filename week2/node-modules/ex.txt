@@ -1,0 +1,15 @@
+<!-- MODEL FILE (userModel.js)-->
+User {
+    username : string,
+    password : string,
+    bestFriends : [User]
+}
+
+module.exports = Users => MongoDB
+
+
+<!-- CONTROLLER FILE -->
+var User = require('userModel.js')
+
+User.find()
+new User()

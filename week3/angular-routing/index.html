@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="CoffeeShop" lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-route.js"></script>
+  
+  <script src="main.js"></script>
+  
+  <title>Document</title>
+</head>
+<body>
+
+<!--  This HTML file will be our "master" html file.  It will be the page that our templates are injected into  -->
+
+  <h1>Bonanza Coffee!</h1>
+  <nav>
+    <ul style="list-style:none;">
+      <a href="#/">
+        <li style="float:left;margin:5px">Home</li>
+      </a>
+      <a href="#/menu">
+        <li style="float:left;margin:5px">Menu</li>
+      </a>
+    </ul>
+  </nav>
+  <div style="clear:both;">
+    
+  </div>
+  <ng-view>
+    <!--   THIS is where our templates will be injected into.  It's the view hole in our view-finder   -->
+  </ng-view>
+  
+</body>
+</html>
+
+

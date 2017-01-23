@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="WestWorld" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="main.js"></script>
+  
+  
+</head>
+<body>
+  
+  <div ng-controller="Delores as dCtrl">
+   
+    <input type="text" ng-model="dCtrl.searchTerm">
+    <ul>
+      <li 
+ ng-repeat="thing in dCtrl.thingsInThePark | filter:dCtrl.searchTerm">
+        {{thing.name}} - {{thing.price | currency}}
+      </li>
+    </ul>
+    
+  </div>
+  <hr>
+  <div ng-controller="Bernard as bCtrl">
+    <ul>
+      <!--   ng-click="bCtrl.higherPrice(thing)"     -->
+      <li  
+  ng-repeat="thing in bCtrl.thingsInThePark | orderBy : 'name'">
+        {{thing.name}} - {{thing.price | currency}}
+      </li>
+    </ul>
+  
+  </div>
+  
+</body>
+</html>
